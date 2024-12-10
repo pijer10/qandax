@@ -1,9 +1,9 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  namespace: qandax
+  namespace: default
   labels:
-    app: my-app
+    app: qandax-app
 spec:
   containers:
     image: nginx:latest
