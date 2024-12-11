@@ -1,12 +1,13 @@
 apiVersion: v1
 kind: Pod
 metadata:
+  name: qandax-app-pod
   namespace: default
-  name: qandax-app
   labels:
     app: qandax-app
 spec:
   containers:
-    image: nginx:latest
+  - name: qandax-app-container
+    image: nginx
     ports:
     - containerPort: 80
