@@ -33,5 +33,6 @@ jobs:
       # Push Docker Image
       - name: Push Docker image to Docker Hub
         run: |
-          echo ${{ secrets.DOCKERHUB_PASSWORD }} | docker login --username pijer10 --password-stdin
+          echo $DOCKER_USERNAME
+          docker login --username pijer10 --password $DOCKER_PASSSWORD
           docker push pijer10/qandax:$GITHUB_REF_NAME-$GITHUB_SHA
