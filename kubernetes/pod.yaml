@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: qandax-app-pod
+  name: qandax-app-pod-testing
   namespace: default
   labels:
     app: qandax-app
