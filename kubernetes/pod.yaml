@@ -8,6 +8,6 @@ metadata:
 spec:
   containers:
   - name: qandax-app-container
-    image: nginx
+    image: pijer10/qandax:latest
     ports:
     - containerPort: 80
