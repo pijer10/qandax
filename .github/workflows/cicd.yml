@@ -28,7 +28,7 @@ jobs:
         run: |
           docker buildx create --use
           docker buildx inspect default --bootstrap
-          docker buildx build --file Dockerfile -t pijer10/qandax:$GITHUB_REF_NAME-$GITHUB_SHA --load .
+          docker buildx build --file Dockerfile -t pijer10/qandax:$GITHUB_REF_NAME-$GITHUB_SHA -t pijer10/qandax:latest --load .
 
       # Push Docker Image
       - name: Push Docker image to Docker Hub
@@ -36,3 +36,4 @@ jobs:
           echo "${{ secrets.DOCKER_USERNAME }}"
           docker login --username "${{ secrets.DOCKER_USERNAME }}" --password "${{ secrets.DOCKER_PASSWORD }}"
           docker push pijer10/qandax:$GITHUB_REF_NAME-$GITHUB_SHA
+          docker push pijer10/qandax:latest
